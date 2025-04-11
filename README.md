@@ -10,6 +10,7 @@ A comprehensive academic management system built with Next.js and MySQL.
 - MySQL database integration
 - Clean and intuitive navigation system
 - Personalized student information display
+- Password management functionality
 
 ## Prerequisites
 
@@ -150,6 +151,12 @@ sync/
    - **Endpoint**: `/api/setup`
    - **Method**: GET
    - **Response**: Status of database initialization and user creation
+
+3. **Change Password API**
+   - **Endpoint**: `/api/change-password`
+   - **Method**: POST
+   - **Body**: `{ "userId": "AJU/231350", "currentPassword": "Himadri@123", "newPassword": "NewPassword123" }`
+   - **Response**: Success or error message
 
 ## Troubleshooting MySQL Connection
 
