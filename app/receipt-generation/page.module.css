@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-light, #f8f9fa);
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 80px auto 3rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    margin-top: 70px;
+    padding: 0 0.5rem;
+  }
+} 
