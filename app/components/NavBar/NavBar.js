@@ -80,7 +80,7 @@ export default function NavBar({ onLogout }) {
       <div className={styles.navContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
-            <img src="/128.png" alt="Sync Logo" className={styles.logoImage} />
+            <img src="/512.png" alt="Sync Logo" className={styles.logoImage} />
           </div>
           <div className={styles.brandName}>Sync</div>
         </div>

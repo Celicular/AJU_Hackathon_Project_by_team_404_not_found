@@ -32,7 +32,37 @@
   font-size: 1.2rem;
   line-height: 1.7;
   color: var(--text-light);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.userInfoItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfoLabel {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.userInfoValue {
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 .statsCards {
@@ -234,6 +264,11 @@
   
   .heroDescription {
     font-size: 1.1rem;
+  }
+  
+  .userInfo {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .statsCards {
