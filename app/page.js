@@ -16,22 +16,10 @@ export default function Home() {
     if (token) {
       setIsAuthenticated(true);
     } else {
-      // For now, we'll just set as authenticated without redirecting
-      // In a real app, you would uncomment this to redirect to login
-      // router.push('/login');
-      setIsAuthenticated(true); // For demo purposes
+      // Redirect to login page if not authenticated
+      router.push('/login');
     }
   }, [router]);
-
-  const handleLogout = () => {
-    // Clear authentication data
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userData');
-    // Clear any localStorage items related to auth
-    localStorage.removeItem('savedUserId');
-    // Redirect to login (uncomment when login page is ready)
-    // router.push('/login');
-  };
 
   if (!isAuthenticated) {
     return null; // Don't render anything while checking authentication
@@ -39,7 +27,7 @@ export default function Home() {
 
   return (
     <div className={styles.main}>
-      <NavBar onLogout={handleLogout} />
+      <NavBar />
       <Hero />
     </div>
   );

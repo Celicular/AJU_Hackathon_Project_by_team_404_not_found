@@ -2,12 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './NavBar.module.css';
 
-export default function NavBar({ onLogout }) {
+export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const navRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     // Close menu when clicking outside
@@ -39,8 +41,18 @@ export default function NavBar({ onLogout }) {
   };
 
   const handleLogout = () => {
+    // Clear session storage
+    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem('userData');
+    
+    // Clear any localStorage items related to auth
+    localStorage.removeItem('savedUserId');
+    
+    // Close the menu
     setIsMenuOpen(false);
-    if (onLogout) onLogout();
+    
+    // Redirect to login page
+    router.push('/login');
   };
 
   const navItems = [
