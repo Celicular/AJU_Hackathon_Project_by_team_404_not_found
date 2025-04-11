@@ -3,7 +3,7 @@
 A modern, responsive ERP system built with Next.js and pure CSS, designed to streamline business operations.
 
 ## 🚀 Project Status
-Currently in development by Team HCK/070 - 404 Not Found
+Currently in development by Team HCK/070 - Team: 404 Not Found
 
 ## ✨ Features Built So Far
 
@@ -42,10 +42,10 @@ Currently in development by Team HCK/070 - 404 Not Found
 
 ## 🏆 Team Members
 ### Team HCK/070 - 404 Not Found
-- [Team Member 1]
-- [Team Member 2]
-- [Team Member 3]
-- [Team Member 4]
+- Zaid Khan (Leader / Management)
+- Himadri Shekhar (Lead Dev / Backend)
+- Sibtain Raza (Frontend Development)
+- Noor Alam (PPT / Assets Manager)
 
 ## 📄 License
 This project is part of a hackathon and is intended for demonstration purposes.
