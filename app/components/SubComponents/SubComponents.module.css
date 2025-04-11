@@ -1,0 +1,50 @@
+.componentContainer {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 90px auto 2rem;
+}
+
+.componentTitle {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.contentArea {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .componentContainer {
+    padding: 1.5rem;
+    margin-top: 80px;
+  }
+  
+  .componentTitle {
+    font-size: 1.5rem;
+  }
+  
+  .contentArea {
+    padding: 1.5rem;
+  }
+  
+  .placeholder {
+    font-size: 1rem;
+  }
+} 

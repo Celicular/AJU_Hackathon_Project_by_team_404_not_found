@@ -1,17 +1,15 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'ERP System',
-  description: 'A comprehensive enterprise resource planning solution',
+  title: 'Student Portal',
+  description: 'A comprehensive portal for student academic management',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <div style={{ position: 'relative' }}>
-          {children}
-        </div>
+    <html lang="en">
+      <body>
+        {children}
       </body>
     </html>
   )
