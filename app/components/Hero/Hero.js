@@ -18,10 +18,10 @@ export default function Hero() {
     <div className={styles.heroContainer}>
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
-          {user ? `Welcome, ${user.name}` : 'Welcome to Student Portal'}
+          {user ? `Welcome to Sync, ${user.name}` : 'Welcome to Sync'}
         </h1>
         <p className={styles.heroDescription}>
-          Access your academic information, manage assignments, and track your progress - all in one place.
+          Access your academic information, manage assignments, and track your progress - all synchronized in one place.
         </p>
         <div className={styles.statsCards}>
           <div className={styles.statsCard}>

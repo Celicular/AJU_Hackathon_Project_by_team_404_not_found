@@ -139,9 +139,10 @@
 .heroImage {
   width: 100%;
   height: 400px;
-  background-image: url('/student-dashboard.jpg');
-  background-size: cover;
+  background-image: url('/1024.png');
   background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   position: relative;

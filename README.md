@@ -1,24 +1,24 @@
-# Enterprise Resource Planning (ERP) System
+# Sync
 
-A modern, responsive ERP system built with Next.js and pure CSS, designed to streamline business operations.
+A modern, responsive academic management system built with Next.js, designed to streamline educational workflows.
 
 ## 🚀 Project Status
-Currently in development by Team HCK/070 - Team: 404 Not Found
+Currently in development
 
 ## ✨ Features Built So Far
 
-### Landing Page
+### Dashboard
 - Modern, responsive hero section
 - Clean and intuitive user interface
 - Mobile-friendly design
 - Gradient-based color scheme
-- Call-to-action buttons
+- Interactive navigation with dropdown menus
 
 ## 🛠️ Tech Stack
 - **Frontend:** Next.js
 - **Styling:** Pure CSS with CSS Modules
 - **Responsive Design:** Mobile-first approach
-- **Layout:** Flexbox
+- **Layout:** Flexbox and Grid
 
 ## 🎨 Design Features
 - Custom color variables for consistent theming
@@ -35,23 +35,16 @@ Currently in development by Team HCK/070 - Team: 404 Not Found
 
 ## 🔜 Upcoming Features
 - User Management
-- Product Management
-- Order Processing
-- Inventory Control
-- Basic Reporting
-
-## 🏆 Team Members
-### Team HCK/070 - 404 Not Found
-- Zaid Khan (Leader / Management)
-- Himadri Shekhar (Lead Dev / Backend)
-- Sibtain Raza (Frontend Development)
-- Noor Alam (PPT / Assets Manager)
+- Academic Performance Tracking
+- Assignment Management
+- Attendance Monitoring
+- Comprehensive Reporting
 
 ## 📄 License
-This project is part of a hackathon and is intended for demonstration purposes.
+This project is intended for demonstration purposes.
 
 ---
-Made with ❤️ by Team HCK/070 - 404 Not Found
+Made with ❤️ by Team Sync
 
 ## Getting Started
 

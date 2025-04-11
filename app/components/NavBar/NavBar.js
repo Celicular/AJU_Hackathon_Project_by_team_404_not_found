@@ -80,9 +80,9 @@ export default function NavBar({ onLogout }) {
       <div className={styles.navContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
-            <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+            <img src="/128.png" alt="Sync Logo" className={styles.logoImage} />
           </div>
-          <div className={styles.brandName}>Student Portal</div>
+          <div className={styles.brandName}>Sync</div>
         </div>
 
         <div className={`${styles.navLinksContainer} ${isMenuOpen ? styles.active : ''}`}>
