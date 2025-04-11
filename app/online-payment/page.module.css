@@ -1,0 +1,755 @@
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  color: #2d3748;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.paymentContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5rem 1rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .paymentContainer {
+    padding: 6rem 2rem 5rem;
+  }
+}
+
+.titleWrapper {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .titleWrapper {
+    margin-bottom: 2.5rem;
+  }
+  
+  .titleWrapper::before,
+  .titleWrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.8));
+    display: block;
+  }
+  
+  .titleWrapper::before {
+    left: 30%;
+  }
+  
+  .titleWrapper::after {
+    right: 30%;
+    transform: rotate(180deg);
+  }
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background-color: #3498db;
+  border-radius: 2px;
+}
+
+/* Student Card */
+.studentCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.studentCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+.studentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .studentDetails {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.studentName h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.6rem;
+  color: #2c3e50;
+}
+
+.courseInfo {
+  margin: 0;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.studentId {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studentId p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.studentId span {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Summary Card */
+.summaryCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summaryTitle, .feesTitle, .semestersTitle {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.summaryTitle::after, .feesTitle::after, .semestersTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #3498db;
+  border-radius: 2px;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .summaryGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.summaryItem {
+  background-color: #f8fafc;
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.summaryItem:hover {
+  transform: translateY(-5px);
+}
+
+.summaryIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ebf8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  color: #3498db;
+}
+
+.summaryLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.summaryValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.dueAmount {
+  color: #e53e3e;
+}
+
+.noBalance {
+  color: #38a169;
+}
+
+.dueWarning, .noDueMessage {
+  background-color: #fff5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dueWarning svg {
+  flex-shrink: 0;
+  color: #e53e3e;
+}
+
+.dueWarning p, .noDueMessage p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e53e3e;
+}
+
+.noDueMessage {
+  background-color: #f0fff4;
+}
+
+.noDueMessage svg {
+  flex-shrink: 0;
+  color: #38a169;
+}
+
+.noDueMessage p {
+  color: #38a169;
+}
+
+/* Fees Structure */
+.feesCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feesTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.feesHeader {
+  background-color: #f8fafc;
+  border-radius: 8px 8px 0 0;
+}
+
+.feesRow {
+  display: flex;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.feesRow:last-child {
+  border-bottom: none;
+}
+
+.feesCell {
+  padding: 1rem;
+  flex: 1;
+}
+
+.feesHeader .feesCell {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.feesBody .feesCell:first-child {
+  color: #4a5568;
+}
+
+.feesBody .feesCell:last-child {
+  color: #2d3748;
+  font-weight: 600;
+  text-align: right;
+}
+
+.totalRow {
+  background-color: #f8fafc;
+  border-radius: 0 0 8px 8px;
+}
+
+.totalRow .feesCell {
+  font-weight: 700;
+}
+
+.notApplicable {
+  color: #a0aec0;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Semester Payments */
+.semestersCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.semestersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .semestersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .semestersGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.semesterItem {
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.semesterItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.paidSemester {
+  border-left: 4px solid #38a169;
+}
+
+.dueSemester {
+  border-left: 4px solid #e53e3e;
+}
+
+.upcomingSemester {
+  border-left: 4px solid #a0aec0;
+}
+
+.semesterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.semesterHeader h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.statusBadge {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.paid {
+  background-color: #f0fff4;
+  color: #38a169;
+}
+
+.due {
+  background-color: #fff5f5;
+  color: #e53e3e;
+}
+
+.upcoming {
+  background-color: #edf2f7;
+  color: #718096;
+}
+
+.semesterAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.payButton {
+  margin-top: auto;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.payButton:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.payButton:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.buttonLoader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.paymentSuccess, .paymentError {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.paymentSuccess {
+  background-color: #f0fff4;
+  color: #38a169;
+}
+
+.paymentError {
+  background-color: #fff5f5;
+  color: #e53e3e;
+}
+
+/* Loading and Error States */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+}
+
+.loadingContainer p {
+  margin-top: 1.5rem;
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+.errorContainer {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 2.5rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.errorIcon {
+  color: #e53e3e;
+  margin-bottom: 1.5rem;
+}
+
+.errorContainer h2 {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.errorContainer p {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.retryButton {
+  padding: 0.75rem 1.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.retryButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+}
+
+.retryButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.4);
+}
+
+.setupSection {
+  margin-top: 1rem;
+}
+
+.setupMessage {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: #ebf8ff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.setupButton {
+  padding: 0.75rem 1.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setupButton:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+}
+
+.setupButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.4);
+}
+
+/* Modal Payment Window */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modalHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: #e53e3e;
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.paymentDetails {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.paymentRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.paymentRow:last-child {
+  border-bottom: none;
+}
+
+.paymentRowTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+  border-top: 2px solid #e2e8f0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.paymentNote {
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.paymentNote p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #854d0e;
+}
+
+.paymentButton {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paymentButton:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.paymentButton:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+} 
