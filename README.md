@@ -1,4 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Enterprise Resource Planning (ERP) System
+
+A modern, responsive ERP system built with Next.js and pure CSS, designed to streamline business operations.
+
+## 🚀 Project Status
+Currently in development by Team HCK/070 - 404 Not Found
+
+## ✨ Features Built So Far
+
+### Landing Page
+- Modern, responsive hero section
+- Clean and intuitive user interface
+- Mobile-friendly design
+- Gradient-based color scheme
+- Call-to-action buttons
+
+## 🛠️ Tech Stack
+- **Frontend:** Next.js
+- **Styling:** Pure CSS with CSS Modules
+- **Responsive Design:** Mobile-first approach
+- **Layout:** Flexbox
+
+## 🎨 Design Features
+- Custom color variables for consistent theming
+- Responsive typography
+- Smooth hover effects
+- Modern gradient backgrounds
+- Flexible button components
+
+## 📱 Responsive Breakpoints
+- Desktop: 1200px and above
+- Tablet: 768px to 1199px
+- Mobile: Below 768px
+- Small devices: Below 480px
+
+## 🔜 Upcoming Features
+- User Management
+- Product Management
+- Order Processing
+- Inventory Control
+- Basic Reporting
+
+## 🏆 Team Members
+### Team HCK/070 - 404 Not Found
+- [Team Member 1]
+- [Team Member 2]
+- [Team Member 3]
+- [Team Member 4]
+
+## 📄 License
+This project is part of a hackathon and is intended for demonstration purposes.
+
+---
+Made with ❤️ by Team HCK/070 - 404 Not Found
 
 ## Getting Started
 
