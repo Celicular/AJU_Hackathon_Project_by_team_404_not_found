@@ -9,10 +9,7 @@ export default function Home() {
           <p className={styles.description}>
             Streamline your business operations with our comprehensive enterprise resource planning solution.
           </p>
-          <div className={styles.buttonGroup}>
-            <button className="btn btn-primary">Get Started</button>
-            <button className={`btn ${styles.btnSecondary}`}>Learn More</button>
-          </div>
+          
         </div>
       </div>
     </div>
