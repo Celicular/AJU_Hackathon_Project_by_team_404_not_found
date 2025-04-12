@@ -1,5 +1,7 @@
 # Sync - Student Portal Application
 
+Developed by Md, Zaid khan, Himadri Shekhar, Noor Alam, Sibtain Raza (team 404: not found)
+
 A comprehensive academic management system built with Next.js and MySQL.
 
 ## Features
@@ -117,8 +119,10 @@ A comprehensive academic management system built with Next.js and MySQL.
    | AJU/231350   | Himadri@123  | Himadri Shekhar   | Polytechnic Computer Science |
    | AJU/220269   | Zaid@123     | Zaid Khan         | Polytechnic Computer Science |
    | AJU/221722   | Sibtain@123  | Sibtain Raza      | Polytechnic Computer Science |
+   
+   
 
-3. After successful login, you'll be redirected to the dashboard where you can see your academic information.
+4. After successful login, you'll be redirected to the dashboard where you can see your academic information.
 
 ## Project Structure
 
