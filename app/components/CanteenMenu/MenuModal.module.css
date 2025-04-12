@@ -1,0 +1,290 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  overscroll-behavior: contain;
+}
+
+.modalContent {
+  background-color: var(--bg-light);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  animation: slideUp 0.4s ease forwards;
+  position: relative;
+}
+
+.menuSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.menuHeader {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-white);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.menuTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 24px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.closeButton:hover {
+  background-color: var(--bg-light);
+  transform: rotate(90deg);
+}
+
+.categoryFilter {
+  padding: 14px 16px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.categoryFilter::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.categoryButton {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: var(--bg-light);
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.categoryButton:hover {
+  background-color: var(--border-color);
+}
+
+.categoryButton.active {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.menuItems {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.menuItems::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menuItems::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuItems::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.loadingState,
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.errorState p {
+  color: var(--error-color);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.retryButton {
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.retryButton:hover {
+  background-color: var(--primary-dark);
+}
+
+.emptyMessage {
+  text-align: center;
+  color: var(--text-light);
+  padding: 40px 0;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.cartSection {
+  width: 400px;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-white);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+  .modalContent {
+    flex-direction: column;
+    max-height: 90vh;
+  }
+  
+  .cartSection {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+  
+  .menuItems {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: 0;
+  }
+  
+  .modalContent {
+    max-height: 100vh;
+    height: 100%;
+    border-radius: 0;
+    animation: slideUp 0.5s ease forwards;
+  }
+
+  .menuHeader, .categoryFilter {
+    padding: 16px;
+  }
+
+  .menuTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuHeader {
+    padding: 12px 16px;
+  }
+  
+  .categoryFilter {
+    padding: 10px 12px;
+  }
+  
+  .categoryButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .menuItems {
+    padding: 12px;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .loadingState, .errorState {
+    padding: 40px 0;
+  }
+} 

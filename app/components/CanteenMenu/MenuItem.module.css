@@ -1,0 +1,226 @@
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-radius: 12px;
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--border-color);
+}
+
+.menuItem:active {
+  transform: translateY(-1px);
+}
+
+.unavailable {
+  opacity: 0.7;
+  background-color: #f8fafc;
+}
+
+.unavailable:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.itemInfo {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: var(--text-dark);
+}
+
+.itemCategory {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.itemPrice {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.unavailableLabel {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--error-color);
+  margin-left: 8px;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.itemActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: var(--bg-light);
+  border-radius: 24px;
+  padding: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.quantityButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quantityButton:hover:not(:disabled) {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.quantityButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.quantityButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.addButton {
+  padding: 10px 18px;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.addButton:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.addButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.addButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.unavailableMessage {
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+  background-color: var(--bg-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .menuItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+  
+  .itemInfo {
+    margin-right: 0;
+    margin-bottom: 14px;
+    width: 100%;
+  }
+  
+  .itemActions {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .quantityControl {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuItem {
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+  
+  .itemName {
+    font-size: 15px;
+  }
+  
+  .itemPrice {
+    font-size: 15px;
+  }
+  
+  .quantityButton {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+  
+  .quantity {
+    font-size: 14px;
+    margin: 0 8px;
+  }
+  
+  .addButton {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}

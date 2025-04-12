@@ -42,6 +42,31 @@ export async function initDatabase() {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
+    // Create Menu table if it doesn't exist
+    await query(`
+      CREATE TABLE IF NOT EXISTS Menu (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        price DECIMAL(10,2) NOT NULL,
+        isAvailable BOOLEAN DEFAULT TRUE,
+        category VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+
+    // Create SalesReport table if it doesn't exist
+    await query(`
+      CREATE TABLE IF NOT EXISTS SalesReport (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        itemId INT NOT NULL,
+        itemName VARCHAR(255) NOT NULL,
+        quantity INT NOT NULL,
+        totalPrice DECIMAL(10,2) NOT NULL,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (itemId) REFERENCES Menu(id)
+      )
+    `);
     
     console.log('Database tables initialized successfully');
     return true;

@@ -1,0 +1,442 @@
+.cartContainer {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.cartHeader {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.cartTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.cartItems {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  max-height: 40vh;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.cartItems::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cartItems::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cartItems::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.emptyCart {
+  text-align: center;
+  color: var(--text-light);
+  padding: 30px 0;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.cartItem:last-child {
+  border-bottom: none;
+}
+
+.cartItem:hover {
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.itemPrice {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+
+.itemActions {
+  display: flex;
+  align-items: center;
+}
+
+.itemTotal {
+  margin: 0 14px 0 0;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.removeButton {
+  background-color: var(--bg-light);
+  border: none;
+  color: var(--error-color);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.removeButton:hover {
+  background-color: var(--error-color);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.cartTotal {
+  padding: 18px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-light);
+  position: sticky;
+  bottom: 0;
+}
+
+.cartTotal h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.totalAmount {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.paymentOptions {
+  padding: 18px;
+}
+
+.paymentTitle {
+  margin: 0 0 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 12px;
+}
+
+.paymentMethod {
+  flex: 1;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.paymentMethod.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.05);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+.methodIcon {
+  font-size: 26px;
+  margin-bottom: 8px;
+  filter: grayscale(0.5);
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.paymentMethod.selected .methodIcon {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.methodName {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.checkoutButton {
+  margin: 0 18px 18px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkoutButton:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+.checkoutButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.checkoutButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.errorMessage {
+  margin: 0 18px 12px;
+  padding: 10px 14px;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  border-left: 3px solid var(--error-color);
+}
+
+.successMessage {
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.successMessage h3 {
+  color: var(--success-color);
+  margin: 16px 0 8px;
+  font-size: 22px;
+}
+
+.successMessage p {
+  margin: 4px 0;
+  color: var(--text-light);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.checkmarkCircle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: scaleIn 0.5s ease forwards;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+.checkmark {
+  width: 32px;
+  height: 16px;
+  border-bottom: 4px solid white;
+  border-right: 4px solid white;
+  transform: rotate(45deg) translate(-2px, -2px);
+  animation: checkmarkAppear 0.5s ease forwards 0.2s;
+  opacity: 0;
+}
+
+.continueButton {
+  margin-top: 24px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.continueButton:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+}
+
+.continueButton:active {
+  transform: translateY(0);
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-2px, -2px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -2px) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .cartContainer {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+  
+  .cartHeader {
+    padding: 16px;
+  }
+  
+  .cartTitle {
+    font-size: 18px;
+  }
+  
+  .cartItems {
+    padding: 12px;
+  }
+  
+  .cartTotal, .paymentOptions {
+    padding: 16px;
+  }
+  
+  .paymentMethod {
+    padding: 12px;
+  }
+  
+  .checkoutButton {
+    margin: 0 16px 16px;
+    padding: 14px;
+  }
+  
+  .errorMessage {
+    margin: 0 16px 10px;
+  }
+  
+  .successMessage {
+    padding: 24px 16px;
+  }
+  
+  .checkmarkCircle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .successMessage h3 {
+    font-size: 20px;
+  }
+  
+  .continueButton {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
